@@ -1,0 +1,3 @@
+﻿  Source.c
+C:\Users\Administrator\Desktop\Program\Source.c(4,1): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.
+C:\Users\Administrator\Desktop\Program\Source.c(3,2): warning C4550: 식이 인수 목록이 없는 함수로 계산됩니다.
