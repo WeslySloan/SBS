@@ -1,3 +1,2 @@
 ﻿  Source.c
-C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\Program\Source.c(13,7): warning C4101: 'grade' :참조되지 않은 지역 변수입니다.
   Program.vcxproj -> C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\Program\x64\Debug\Program.exe
