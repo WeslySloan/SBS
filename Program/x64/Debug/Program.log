@@ -1,2 +1,3 @@
 ﻿  Source.c
+C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\Program\Source.c(53,1): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
   Program.vcxproj -> C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\Program\x64\Debug\Program.exe
