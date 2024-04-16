@@ -22,15 +22,15 @@ void GotoXY(int x, int y)
 
 int main()
 {
-    // char key = 0;
-    // 
-    // int x = 0;
-    // int y = 0;
-    // 
-    // system("cls");
-    // GotoXY(x, y);
-    // printf("¡Ú");
-    // 
+     char key = 0;
+     
+     int x = 0;
+     int y = 0;
+     
+     system("cls");
+     GotoXY(x, y);
+     printf("¡Ú");
+     
     // while (1)
     // {
     // 	if (_kbhit())
@@ -70,7 +70,7 @@ int main()
     // 
     // 
     // }
-    // 
-    // 
-    // return 0;
+     
+     
+     return 0;
 }
