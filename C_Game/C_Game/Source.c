@@ -11,7 +11,7 @@
 void SetConsoleView()
 {
     system("mode con:cols=100 lines=25");
-    system("title Google Dinosaurs. By BlockDMask.");
+    system("title RunGame");
 }
 
 

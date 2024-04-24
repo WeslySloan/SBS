@@ -336,7 +336,7 @@ void Map_1_Draw()
 	printf(" |______%c%c_______|   |______%c%c_______|       |______%c%c_______|  |_______%c%c______|", i, j, i, j, i, j, i, j);
 	gotoxy(2, 9);
 	i = 0xa1, j = 0xd9;
-	printf("        %c%c                  %c%c                    %c%c                 %c%c", i, j, i, j, i, j, i, j);
+	printf("        %c%c                 %c%c                     %c%c                 %c%c", i, j, i, j, i, j, i, j);
 
 	//아랫 줄
 	gotoxy(2, 12);
@@ -357,7 +357,7 @@ void Map_1_Draw()
 	printf("     %c%c________/         %c%c________/             %c%c________/        %c%c________/", i, j, i, j, i, j, i, j);
 
 	gotoxy(1, 0);
-	printf("Map 1");
+	printf(" Map1");
 }
 
 void Big_Clear()
@@ -606,10 +606,10 @@ int main()							// 메인 함수
 			if (x / 2 == 15 && y == 9)
 				M_S = 2;
 
-			if (x / 2 == 27 && y == 9)
+			if (x / 2 == 26 && y == 9)
 				M_S = 3;
 
-			if (x / 2 == 37 && y == 9)
+			if (x / 2 == 36 && y == 9)
 				M_S = 4;
 
 			if (x / 2 == 5 && y == 12)
