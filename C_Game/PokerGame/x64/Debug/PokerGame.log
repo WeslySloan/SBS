@@ -30,6 +30,6 @@ C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\C_Game\PokerGame\Gamble_Town.c(3135,1
 C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\C_Game\PokerGame\Gamble_Town.c(3428,8): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\C_Game\PokerGame\Gamble_Town.c(3447,8): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\C_Game\PokerGame\Gamble_Town.c(3641,9): warning C4476: 'printf' : 서식 지정자에 알 수 없는 형식 필드 문자 '\xec'이(가) 있습니다.
-C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\C_Game\PokerGame\Gamble_Town.c(2926): warning C4716: 'Gold_Store': 값을 반환해야 합니다.
 C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\C_Game\PokerGame\Gamble_Town.c(2989): warning C4716: 'Gold_Change': 값을 반환해야 합니다.
+C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\C_Game\PokerGame\Gamble_Town.c(2926): warning C4716: 'Gold_Store': 값을 반환해야 합니다.
   PokerGame.vcxproj -> C:\Users\rkc32\OneDrive\Desktop\GITHUB\SBS\C_Game\x64\Debug\PokerGame.exe

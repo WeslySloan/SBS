@@ -7,13 +7,11 @@
 #define TREE_BOTTOM_Y 20
 #define TREE_BOTTOM_X 45
 
-
 void SetConsoleView()
 {
     system("mode con:cols=100 lines=25");
     system("title RunGame");
 }
-
 
 void GotoXY(int x, int y)
 {
@@ -22,7 +20,6 @@ void GotoXY(int x, int y)
     Pos.Y = y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
-
 
 int GetKeyDown()
 {
@@ -62,7 +59,6 @@ void DrawDino(int dinoY)
     }
 }
 
-
 void DrawTree(int treeX)
 {
     GotoXY(treeX, TREE_BOTTOM_Y);
@@ -76,7 +72,6 @@ void DrawTree(int treeX)
     GotoXY(treeX, TREE_BOTTOM_Y + 4);
     printf(" $$ ");
 }
-
 
 void DrawGameOver(const int score)
 {
@@ -96,7 +91,6 @@ void DrawGameOver(const int score)
     system("pause");
 }
 
-
 bool isCollision(const int treeX, const int dinoY)
 {
 
@@ -110,29 +104,103 @@ bool isCollision(const int treeX, const int dinoY)
     return false;
 }
 
-
 void DrawGameStart()
 {
     system("cls");
-    int x = 18;
-    int y = 8;
+    int x = 17;
+    int y = 4;
     GotoXY(x, y);
     printf("================================");
     GotoXY(x, y + 1);
     printf("======== R U N  G A M E ========"); 
     GotoXY(x, y + 2);
     printf("================================");
-    printf("\n\n\n\n\n\n\n\n\n");
-    printf("Press any key to start..."); 
-    _getch(); 
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    printf(" 조작 : ↑↓ / 확인 : ENTER");
 }
+
+int First_Menu()
+{
+    int i = 1; // 메뉴 선택
+    int key = 0; // 키 인식
+
+    while (1)
+    {
+        system("cls");
+        DrawGameStart();
+
+        GotoXY(38, 14);
+        printf("시작 %c%c", 0xa1, 0xdb);
+        GotoXY(38, 15);
+        printf("설명 %c%c", 0xa1, 0xdb);
+        GotoXY(38, 16);
+        printf("종료 %c%c", 0xa1, 0xdb);
+
+        while (1)
+        {
+            GotoXY(41, 13 + i);
+            printf("\b%c%c", 0xa1, 0xdc);
+
+            GotoXY(0, 28);
+            key = _getch();
+            if (key == 224)
+            {
+                key = _getch();
+                GotoXY(41, 13 + i);
+                printf("\b%c%c", 0xa1, 0xdb);
+                switch (key)
+                {
+                case 72:
+                    if (i > 1)
+                        i--;
+                    break;
+
+                case 80:
+                    if (i < 3)
+                        i++;
+                    break;
+
+                default:
+                    break;
+                }
+            }
+
+            if (key == 32 || key == 13)
+                break;
+        }
+
+        if (i == 1)
+        {
+            break;
+            //첫번째칸
+        }
+
+        if (i == 2)
+        {
+            break;
+            //두번쨰칸
+        }
+
+        if (i == 3)
+        {
+            exit(0);
+        }
+    }
+
+    return i;
+}
+
+
+
+
 
 int main()
 {
     SetConsoleView();
-    DrawGameStart();
+    int userChoice = First_Menu();
 
-    while (true)
+
+    while (userChoice==1)
     {
         bool isJumping = false;
         bool isBottom = true;
@@ -201,5 +269,16 @@ int main()
 
         DrawGameOver(score);
     }
+
+
+    while (userChoice == 2)
+    {
+        printf("2번");
+    }
+
     return 0;
 }
+
+
+
+
