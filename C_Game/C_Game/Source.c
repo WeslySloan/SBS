@@ -3,6 +3,10 @@
 #include<conio.h>
 #include<time.h>
 #include<stdbool.h>
+#include<stdlib.h>
+
+#define max 10
+
 #define DINO_BOTTOM_Y 12
 #define TREE_BOTTOM_Y 20
 #define TREE_BOTTOM_X 45
@@ -20,6 +24,14 @@ void GotoXY(int x, int y)
     Pos.Y = y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
+
+gotoxy2(int x, int y)
+{
+    COORD pos = { x,y };
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+
+
 
 int GetKeyDown()
 {
@@ -108,7 +120,7 @@ void DrawGameStart()
 {
     system("cls");
     int x = 17;
-    int y = 4;
+    int y = 5;
     GotoXY(x, y);
     printf("================================");
     GotoXY(x, y + 1);
@@ -130,9 +142,9 @@ int First_Menu()
         DrawGameStart();
 
         GotoXY(38, 14);
-        printf("시작 %c%c", 0xa1, 0xdb);
+        printf("Dino %c%c", 0xa1, 0xdb);
         GotoXY(38, 15);
-        printf("설명 %c%c", 0xa1, 0xdb);
+        printf("Race %c%c", 0xa1, 0xdb);
         GotoXY(38, 16);
         printf("종료 %c%c", 0xa1, 0xdb);
 
@@ -189,6 +201,12 @@ int First_Menu()
 
     return i;
 }
+
+struct horse {
+    int x, y;
+    int speed;
+    int score;
+};  // 속도및 점수, xy좌표
 
 
 
@@ -273,7 +291,85 @@ int main()
 
     while (userChoice == 2)
     {
-        printf("2번");
+        system("cls");
+        struct horse st[max];
+        int i, j;
+        int count = 1;
+        srand(time(NULL));
+        rand();rand();rand();
+        for (i = 0;i < 21;i++) { //결승점 라인
+            gotoxy2(70, i + 1);
+            printf("|");
+        }
+        for (i = 0;i < 11;i++) { //레인
+            for (j = 2;j < 70;j++) {
+                gotoxy2(j, i * 2 + 1);
+                printf("-");
+            }
+        }
+        for (i = 0;i < max;i++) { //출발점에 말 정렬
+            st[i].x = 1;
+            st[i].y = i * 2 + 2;
+            st[i].speed = rand() % 10 + 1;
+            gotoxy2(st[i].x, st[i].y);
+            printf(">%d>", i);
+        }
+
+        gotoxy2(20, 22);
+        system("pause");
+        printf("\n");
+        gotoxy2(20, 20);
+        for (i = 3;i >= 0;i--) { //출발 전 카운터
+            gotoxy2(20, 22);
+            printf("                                      ");
+            gotoxy2(20, 22);
+            if (i == 0)
+            {
+                printf("경기 시작 합니다!");
+            }
+            else
+            {
+                printf("count : %d", i);
+            }
+
+            Sleep(500);
+        }
+        gotoxy2(20, 20);
+        printf(" ");
+
+        while (1) { //달리기
+            for (i = 0;i < max;i++) {
+                if (--st[i].speed == 0) {
+                    gotoxy2(st[i].x, st[i].y);
+                    printf(" ");
+                    st[i].x++;
+                    gotoxy2(st[i].x, st[i].y);
+                    printf(">%d>", i);
+                    st[i].speed = rand() % 10 + 1;
+                    if (st[i].x >= 70 && st[i].speed != 500) { //결승점 도착시
+                        gotoxy2(50, 22);
+                        st[i].score = count;
+                        printf("%d번 통과", i);
+                        Sleep(400);
+                        st[i].speed = 500;
+                        count++;
+                        if (count == max + 1)break;
+                    }
+                }
+            }
+            if (count == max + 1) break;
+            Sleep(50);
+        }
+        for (i = 0;i < max;i++) { //결과 발표
+            for (j = 0;j < max;j++) {
+                if (st[j].score == i + 1) {
+                    gotoxy2(30, i + 6);
+                    printf("%d등 : %d번", i + 1, j);
+                }
+            }
+        }
+        gotoxy2(20, 22);
+        system("pause");
     }
 
     return 0;
