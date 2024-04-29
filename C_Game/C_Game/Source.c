@@ -124,7 +124,7 @@ void DrawGameStart()
     GotoXY(x, y);
     printf("================================");
     GotoXY(x, y + 1);
-    printf("======== R U N  G A M E ========"); 
+    printf("======== R U N  G A M E ========");
     GotoXY(x, y + 2);
     printf("================================");
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -210,15 +210,13 @@ struct horse {
 
 
 
-
-
 int main()
 {
     SetConsoleView();
     int userChoice = First_Menu();
 
 
-    while (userChoice==1)
+    while (userChoice == 1)
     {
         bool isJumping = false;
         bool isBottom = true;
@@ -374,7 +372,3 @@ int main()
 
     return 0;
 }
-
-
-
-
