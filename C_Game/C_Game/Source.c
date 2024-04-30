@@ -327,7 +327,7 @@ int main()
             }
             else
             {
-                printf("count : %d", i);
+                printf("Count : %d", i);
             }
 
             Sleep(500);
@@ -351,7 +351,8 @@ int main()
                         Sleep(400);
                         st[i].speed = 500;
                         count++;
-                        if (count == max + 1)break;
+                        if (count == max + 1)
+                            break;
                     }
                 }
             }
