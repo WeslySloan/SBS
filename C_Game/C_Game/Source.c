@@ -31,8 +31,6 @@ gotoxy2(int x, int y)
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
-
-
 int GetKeyDown()
 {
     if (_kbhit() != 0)
@@ -105,7 +103,6 @@ void DrawGameOver(const int score)
 
 bool isCollision(const int treeX, const int dinoY)
 {
-
     GotoXY(0, 0);
     printf("treeX : %d, dinoY : %d", treeX, dinoY);
     if (treeX <= 8 && treeX >= 4 &&
@@ -282,7 +279,6 @@ int main()
             GotoXY(22, 0);
             printf("Score : %d ", score);
         }
-
         DrawGameOver(score);
     }
 
